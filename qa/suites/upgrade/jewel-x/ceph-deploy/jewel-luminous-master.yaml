@@ -4,7 +4,7 @@ meta:
     stable jewel as initial release, upgrade to stable luminous and
     also setup mgr nodes along after upgrade, check for cluter to
     reach healthy state and run kernel tar/untar task. Finally upgrade
-    to master dev branch and wait for healthy state, Run systemd and 
+    to master dev branch and wait for healthy state, Run systemd and
     mixed-load gen task. This test will detect any ceph upgrade issue
     and systemd issues.
 overrides:
@@ -60,6 +60,10 @@ tasks:
       dev: master
     setup-mgr-node: False
     check-for-healthy: True
+    roles:
+      - mon.a
+      - mon.b
+      - mon.c
 - systemd:
 - workunit:
     clients:

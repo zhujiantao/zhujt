@@ -60,6 +60,10 @@ tasks:
       dev: master
     setup-mgr-node: False
     check-for-healthy: True
+    roles:
+      - mon.a
+      - mon.b
+      - mon.c
 - systemd:
 - workunit:
     clients:
